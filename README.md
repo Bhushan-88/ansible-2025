@@ -16,12 +16,11 @@ High-->	./ansible.cfg -->Most common - per-project configurations
 Medium--> ~/.ansible.cfg-->User-specific defaults
 Lowest--> /etc/ansible/ansible.cfg-->System-wide defaults
 
-...
+```bash
 root@ubuntu:~# mkdir /etc/ansible
 root@ubuntu:~# mv ansible.cfg /etc/ansible/
 root@ubuntu:~# touch /etc/ansible/hosts
 root@ubuntu:~# cat > /root/hosts
 192.168.1.11
 root@ubuntu:~# ansible -i hosts all -u ansible --private-key=./id_rsa -m ping
-
-...
+```
