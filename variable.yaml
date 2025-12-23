@@ -1,8 +1,19 @@
 - name: variable example
   hosts: all
   vars:
-    url: "https://example.com"
+    url: "https://goloble.variable.com"
   tasks:
     - name: print url variable
       debug:
         msg: "The URL is {{ url }}"
+
+    - name: print url variable
+      debug:
+        msg: "The URL is {{ url }}"
+
+
+    - name: print url variable
+      debug:
+        msg: "The URL is {{ url }}"
+     vars:
+        url: "https://local.variable.com"
