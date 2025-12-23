@@ -1,6 +1,6 @@
 - name: variable example
   hosts: all
-  vars:
+  #vars:
   #  url: "https://golobl.variable.com"
   #vars_files:
   #  - ./variables.txt
@@ -8,6 +8,7 @@
   #  - name: "url"
   #    prompt: "Please enter the URL"
   #    private: no 
+
   tasks:
     - name: print url variable
       debug:
