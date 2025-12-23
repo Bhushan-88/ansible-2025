@@ -2,6 +2,8 @@
   hosts: all
   vars:
     url: "https://goloble.variable.com"
+    vars_file:
+      - extra_vars.yaml
   tasks:
     - name: print url variable
       debug:
