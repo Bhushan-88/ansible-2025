@@ -10,7 +10,9 @@ Deploying applications
 ## Ansible primarily uses SSH (Port 22 by default) for communication with Linux/Unix hosts and WinRM (Ports 5985/5986) for Windows hosts.
 
 # create own ansible configuration file 
+```bash
 ansible-config init --disabled > ansible.cfg
+```
 Highest--> ANSIBLE_CONFIG=/path/to/custom.cfg-->Project-specific, CI/CD environments
 High-->	./ansible.cfg -->Most common - per-project configurations
 Medium--> ~/.ansible.cfg-->User-specific defaults
@@ -22,5 +24,7 @@ root@ubuntu:~# mv ansible.cfg /etc/ansible/
 root@ubuntu:~# touch /etc/ansible/hosts
 root@ubuntu:~# cat > /root/hosts
 192.168.1.11
-root@ubuntu:~# ansible -i hosts all -u ansible --private-key=./id_rsa -m ping
+root@ubuntu:~# ansible -i hosts all -u ansible --private-key=./id_rsa -m ping # for ping connected webservers
+root@ubuntu:~/ansible-2025# ansible-playbook -u ansibe --private-key=./id_ed25519 my-first-playbook.yaml ORR 
+root@ubuntu:~# ansible-playbook my-first-playbook.yaml
 ```
