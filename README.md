@@ -43,3 +43,12 @@ root@ubuntu:~# ansible-playbook my-first-playbook.yaml
 ## what is ansible variables?
 Variables = Placeholders for values that make your playbooks dynamic and reusable.
 
+1st-priority-->CLI Variable
+2st-priority-->Local Variable
+3st-priority-->File Variable
+4st-priority-->Promt Variable
+5st-priority-->Global Variable
+
+```bash
+root@ubuntu:~/ansible-2025# ansible-playbook -e url=cli.example.com variable.yaml
+```
