@@ -1,9 +1,9 @@
 - name: variable example
   hosts: all
   vars:
-    url: "https://goloble.variable.com"
+    url: "https://golobl.variable.com"
   vars_files:
-    - ./extra_vars.txt
+    - ./variables.txt
   tasks:
     - name: print url variable
       debug:
