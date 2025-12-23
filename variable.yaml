@@ -10,6 +10,7 @@
   #    private: no 
 
   tasks:
+  
     - name: print url variable
       debug:
         msg: "The URL is {{ url }}"
