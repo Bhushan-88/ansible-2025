@@ -1,6 +1,8 @@
 - name: variable example
   hosts: all
+  vars:
+    url: "https://example.com"
   tasks:
     - name: print url variable
       debug:
-        msg: The URL is "google.com"
+        msg: "The URL is {{ url }}"
