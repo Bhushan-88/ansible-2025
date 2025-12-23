@@ -2,8 +2,12 @@
   hosts: all
   vars:
     url: "https://golobl.variable.com"
-  vars_files:
-    - ./variables.txt
+  #vars_files:
+  #  - ./variables.txt
+  vars_prompt:
+    - name: "url"
+      prompt: "Please enter the URL"
+      private: no 
   tasks:
     - name: print url variable
       debug:
