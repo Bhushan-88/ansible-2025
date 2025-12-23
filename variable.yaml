@@ -3,4 +3,4 @@
   tasks:
     - name: print url variable
       debug:
-        msg: "The URL is {{ url }}"
+        msg: The URL is "google.com"
