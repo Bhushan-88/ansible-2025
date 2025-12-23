@@ -1,0 +1,6 @@
+- name: variable example
+  hosts: all
+  tasks:
+    - name: print url variable
+      debug:
+        msg: "The URL is {{ url }}"
