@@ -15,5 +15,5 @@
     - name: print url variable
       debug:
         msg: "The URL is {{ url }}"
-     vars:
+      vars:
         url: "https://local.variable.com"
