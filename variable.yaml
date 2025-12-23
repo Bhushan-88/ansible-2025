@@ -3,7 +3,7 @@
   vars:
     url: "https://goloble.variable.com"
   vars_files:
-    - ./extra_vars.yaml
+    - ./extra_vars.txt
   tasks:
     - name: print url variable
       debug:
