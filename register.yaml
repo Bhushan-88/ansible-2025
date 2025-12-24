@@ -1,0 +1,8 @@
+- name: register example
+  hosts: all
+
+  tasks:
+
+    - name: get hostname
+      shell:
+      cmd: hostname
