@@ -1,5 +1,5 @@
 # ansible-2025
-# Ansible is an open-source automation tool used for: Configuration Management: Automatically setting up and maintaining systems (e.g., installing packages, editing config files).
+## Ansible is an open-source automation tool used for: Configuration Management: Automatically setting up and maintaining systems (e.g., installing packages, editing config files).
 
 Setting up servers
 Installing software
@@ -21,7 +21,7 @@ Every server gets set up exactly the same way - no human mistakes or forgotten s
 You write "recipes" (called playbooks) that anyone can use, ensuring everyone follows the same process.
 4. Free & Popular
 Open-source with huge community support.
-# create own ansible configuration file 
+## create own ansible configuration file 
 ```bash
 ansible-config init --disabled > ansible.cfg
 ```
@@ -48,7 +48,16 @@ Variables = Placeholders for values that make your playbooks dynamic and reusabl
 3st-priority-->File Variable
 4st-priority-->Promt Variable
 5st-priority-->Global Variable
+6st-priority-->Hosts Variable
+
 
 ```bash
 root@ubuntu:~/ansible-2025# ansible-playbook -e url=cli.example.com variable.yaml
 ```
+
+## Ansible Facts Gathering
+Facts = Automatic discovery of system information
+Ansible collects details about your servers automatically before running tasks.
+
+```bash
+ansible -i hosts all -m setup

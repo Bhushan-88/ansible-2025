@@ -1,7 +1,7 @@
 - name: variable example
   hosts: all
-  #vars:
-  #  url: "https://golobl.variable.com"
+  vars:
+    url: "https://golobl.variable.com"
   #vars_files:
   #  - ./variables.txt
   #vars_prompt:
@@ -10,7 +10,7 @@
   #    private: no 
 
   tasks:
-  
+
     - name: print url variable
       debug:
         msg: "The URL is {{ url }}"
