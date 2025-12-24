@@ -1,0 +1,9 @@
+- name: gathering facts example
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+
+    - name: print os
+      debug:
+        msg: "The operating system is {{ ansible_distribution }}"
