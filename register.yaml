@@ -6,6 +6,8 @@
     - name: get hostname
       shell: hostname
       register: hostname_result
+      ignore_errors: yes
+
     - name: print hostname
       debug:
         msg: "The hostname is {{ hostname_result.stdout }}"

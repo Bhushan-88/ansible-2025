@@ -1,0 +1,9 @@
+- name: condition example
+  hosts: all
+
+  tasks:
+
+    - name: check if file exists
+      debug:
+        msg: "The file exists."
+      when: ansible_facts['os_family'] == "Debian"
