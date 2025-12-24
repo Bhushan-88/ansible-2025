@@ -13,7 +13,7 @@
         msg: "This is CentOS"
       when: ansible_distribution == "CentOS"
 
-    - name: print not ubuntu
+    - name: print amazon linux
       debug:
         msg: "Wellcom to amazon linux"
       when: ansible_distribution == "Amazon" and ansible_distribution_version == "24.04"
