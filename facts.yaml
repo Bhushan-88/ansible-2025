@@ -11,3 +11,6 @@
     - name: print ip address
       debug:
         msg: "The IP address is {{ ansible_default_ipv4.address }}"
+    - name: print hostname
+      debug:
+        msg: "The hostname is {{ ansible_hostname }}"
