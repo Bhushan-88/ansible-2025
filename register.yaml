@@ -4,5 +4,5 @@
   tasks:
 
     - name: get hostname
-      shell:
-      cmd: hostname
+      shell: hostname
+      register: hostname_result
