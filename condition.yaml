@@ -16,5 +16,5 @@
     - name: print not ubuntu
       debug:
         msg: "Wellcom to amazon linux"
-      when: ansible_distribution == "Amazon" and ansible_distribution_version == "2"
+      when: ansible_distribution == "Amazon" and ansible_distribution_version == "24.04"
       
