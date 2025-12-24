@@ -3,7 +3,18 @@
 
   tasks:
 
-    - name: check if file exists
+    - name: print ubuntu
       debug:
-        msg: "The file exists."
-      when: ansible_facts['os_family'] == "Debian"
+        msg: "This is Ubuntu"
+      when: ansible_distribution == "Ubuntu"
+
+    - name: print centos
+      debug:
+        msg: "This is CentOS"
+      when: ansible_distribution == "CentOS"
+
+    - name: print not ubuntu
+      debug:
+        msg: "Wellcom to amazon linux"
+      when: ansible_distribution == "Amazon"
+      
