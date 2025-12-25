@@ -1,0 +1,8 @@
+- name:
+  hosts: all
+  tasks:
+    - name: setfacts example
+      debug:
+        msg: "{{ OS_FAMILY }}"
+      set_fact:
+        OS_FAMILY: "{{ ansible_facts['os_family'] }}"
