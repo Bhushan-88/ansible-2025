@@ -1,6 +1,6 @@
 - name:
   hosts: all
-  
+
   tasks:
     - name:  print fruit list
       debug:
@@ -12,3 +12,14 @@
         - mango
         - orange
 
+    - name: install packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - curl
+        - vim
+        - wget
+        - tree
+      become: yes
