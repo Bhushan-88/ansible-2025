@@ -1,8 +1,8 @@
-- name:
-  hosts: all
-  tasks:
-    - name: setfacts example
-      debug:
-        msg: "{{ OS_FAMILY }}"
-      set_fact:
-        OS_FAMILY: "{{ ansible_facts['os_family'] }}"
+- name: Set a simple fact
+  set_fact:
+    app_name: "myapp"
+    app_version: "2.0"
+
+- name: Use the fact
+  debug:
+    msg: "Deploying {{ app_name }} version {{ app_version }}"
