@@ -1,8 +1,9 @@
 - name: Set a simple fact
-  set_fact:
-    app_name: "myapp"
-    app_version: "2.0"
-
-- name: Use the fact
-  debug:
-    msg: "Deploying {{ app_name }} version {{ app_version }}"
+  hosts: all
+  tasks:
+    - name: Set fact 
+      set_fact:
+        OS: Debian
+    - name: Display the OS fact
+      debug:
+        msg: "The operating system is {{ OS }}"
