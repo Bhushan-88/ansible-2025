@@ -1,3 +1,22 @@
-- name:
+- name: my web server setup
   hosts: all
-  
+  become: yes
+  tasks:
+    - name: install httpd package
+      packages:
+        name: httpd
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: install apache2 package
+      packages:
+        name: apache2
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: start httpd service
+      systemd:
+        name: httpd
+        state: started
+        enabled: yes
+      when: ansible_os_family == "RedHat"
