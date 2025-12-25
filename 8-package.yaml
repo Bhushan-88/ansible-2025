@@ -3,20 +3,26 @@
   become: yes
   tasks:
     - name: install httpd package
-      packages:
+      package:
         name: httpd
-        state: present
+        state: latest
       when: ansible_os_family == "RedHat"
-
     - name: install apache2 package
-      packages:
+      package:
         name: apache2
-        state: present
+        state: latest
       when: ansible_os_family == "Debian"
 
-    - name: start httpd service
+    - name: start httpd 
       systemd:
         name: httpd
         state: started
         enabled: yes
       when: ansible_os_family == "RedHat"
+      
+    - name: start apache2 
+      systemd:
+        name: apache2
+        state: started
+        enabled: yes
+      when: ansible_os_family == "Debian"
