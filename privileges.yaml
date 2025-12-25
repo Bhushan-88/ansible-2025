@@ -1,0 +1,15 @@
+- name: privilege escalation example
+  hosts: all
+  become: yes
+  tasks:
+    - name: insall httpd package
+      yum:
+        name: httpd
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: install apache2 package
+      apt:
+        name: apache2
+        state: present
+      when: ansible_os_family == "Debian"
