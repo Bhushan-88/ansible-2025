@@ -21,7 +21,7 @@
         state: present
       when: ansible_os_family == "Debian"
     - name: start apache2 
-      service:
+      systemd:
         name: apache2
         state: started
         enabled: yes
