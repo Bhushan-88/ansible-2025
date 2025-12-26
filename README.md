@@ -63,3 +63,5 @@ Ansible collects details about your servers automatically before running tasks.
 ansible -i hosts all -m setup
 ```
 ## Tags 
+Tags = Labels for tasks that let you run only specific parts of a playbook.
+

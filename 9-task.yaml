@@ -1,0 +1,29 @@
+---
+- name: Test Tags
+  hosts: all
+  
+  tasks:
+    - name: Task 1 (setup)
+      debug:
+        msg: "Setting up..."
+      tags: setup
+    
+    - name: Task 2 (install)
+      debug:
+        msg: "Installing..."
+      tags: install
+    
+    - name: Task 3 (always runs)
+      debug:
+        msg: "This always runs!"
+      tags: always
+    
+    - name: Task 4 (config)
+      debug:
+        msg: "Configuring..."
+      tags: config
+    
+    - name: Task 5 (test - can skip)
+      debug:
+        msg: "Testing..."
+      tags: test
