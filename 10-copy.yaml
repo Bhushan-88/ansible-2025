@@ -1,0 +1,19 @@
+- name: my web server
+  hosts: server
+  become: yes
+
+  tasks:
+    - name: Ensure web server is installed
+      package:
+        name: httpd
+        state: present
+    - name: Ensure web server is started and enabled
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: deploy index.html to web server
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html

@@ -64,4 +64,14 @@ ansible -i hosts all -m setup
 ```
 ## Tags 
 Tags = Labels for tasks that let you run only specific parts of a playbook.
+```bash
+9-tags.yaml
+
+ansible-playbook 9-tags.yaml --tags "setup,install" #Run install OR setup tasks
+ansible-playbook 9-tags.yaml --skip-tags "test"  #Skip all test tasks
+ansible-playbook 9-tags.yaml --tags "always"   #Force always-tagged tasks
+ansible-playbook 9-tags.yaml --list-tags  #list all tags 
+```
+# Copy
+copy = Copy files from control node to managed nodes
 
