@@ -61,3 +61,5 @@ Ansible collects details about your servers automatically before running tasks.
 
 ```bash
 ansible -i hosts all -m setup
+```
+## Tags 

@@ -6,7 +6,7 @@
     - name: install httpd package
       package:
         name: httpd
-        state: present
+        state: absent 
       when: ansible_os_family == "RedHat"
     - name: start httpd 
       systemd:
@@ -18,7 +18,7 @@
     - name: install apache2 package
       package:
         name: apache2
-        state: present
+        state: absent
       when: ansible_os_family == "Debian"
     - name: start apache2 
       systemd:
