@@ -1,6 +1,7 @@
 - name: my web server setup
   hosts: all
   become: yes
+  ignore_errors: yes
   tasks:
     - name: install httpd package
       package:
