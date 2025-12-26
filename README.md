@@ -62,6 +62,33 @@ Ansible collects details about your servers automatically before running tasks.
 ```bash
 ansible -i hosts all -m setup
 ```
+
+## Register
+register is used to store the output of a task in a variable, so that you can use that output in later tasks (for conditions, debugging, or logic).
+
+## Condition
+A condition controls whether a task runs or not.
+In Ansible, conditions are written using the when keyword.
+
+“Run this task only if the condition is true.”
+ex:-when: ansible_os_family == "Debian"
+
+## Privilege escalation
+In Ansible, privilege escalation is called become.
+
+Int Quetion: Privileges are permissions assigned to users or processes that determine what actions they can perform on a system. Administrative tasks require elevated privileges.
+
+## Loop
+Loops = Repeat a task multiple times with different values
+
+Ansible loops allow a task to run multiple times using different values, reducing code repetition and improving automation efficiency.
+
+## Setfact
+set_fact is used to create or modify variables dynamically during playbook execution.
+
+## Package module
+The package module allows you to manage packages without worrying about the OS-specific package manager.
+
 ## Tags 
 Tags = Labels for tasks that let you run only specific parts of a playbook.
 ```bash
@@ -72,6 +99,17 @@ ansible-playbook 9-tags.yaml --skip-tags "test"  #Skip all test tasks
 ansible-playbook 9-tags.yaml --tags "always"   #Force always-tagged tasks
 ansible-playbook 9-tags.yaml --list-tags  #list all tags 
 ```
-# Copy
-copy = Copy files from control node to managed nodes
 
+# Copy
+copy = Copy files from control node to managed nodes ORR
+
+Use copy to send files from your computer to remote servers. Add permissions, validate, and create files directly with content!
+
+## lineinfile
+lineinfile manages individual lines in configuration files without editing the entire file.
+
+It is commonly used for:
+
+Configuration management
+Enabling/disabling settings
+Small file changes

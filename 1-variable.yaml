@@ -25,3 +25,4 @@
         msg: "The URL is {{ url }}"
       vars:
         url: "https://local.variable.com"
+        

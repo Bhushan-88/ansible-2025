@@ -1,0 +1,19 @@
+---
+- name: Add a line to file
+  hosts: all
+  become: yes
+  tasks:
+    - name: Add text to file
+      lineinfile:
+        path: /mnt/demo.txt
+        line: "This line is managed by Ansible"
+        create: yes
+        state: present
+
+    - name: Verify the line was added
+      command: cat /mnt/demo.txt
+      register: cat_output
+
+    - name: Show the file content
+      debug:
+        msg: "{{ cat_output.stdout }}"

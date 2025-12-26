@@ -1,6 +1,6 @@
 - name: privilege escalation example
   hosts: all
-  become: yes
+  become: yes  # <-- This makes everything run as root
   tasks:
     - name: insall httpd package
       yum:
@@ -13,3 +13,10 @@
         name: apache2
         state: present
       when: ansible_os_family == "Debian"
+
+    - name: Edit file (needs root)
+      lineinfile:
+        path: /mnt/file.txt
+        create: yes
+        line: "192.168.1.10 myserver"
+      become: yes  # <-- Only this task as root
