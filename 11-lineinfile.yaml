@@ -17,3 +17,10 @@
     - name: Show the file content
       debug:
         msg: "{{ cat_output.stdout }}"
+
+
+    - name: line in file with install package
+      lineinfile:
+        path: /var/www/html/index.html
+        line: "<h1>Welcome to Ansible Managed Page</h1>"
+        regexp: '^<h1>.*</h1>$'
