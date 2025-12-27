@@ -1,4 +1,4 @@
-tasks:
+---
     - name: Install httpd
       packege:
         name: "{{PKG}}"
@@ -14,4 +14,3 @@ tasks:
         name: "{{PKG}}"
         state: started
         enabled: yes
-
