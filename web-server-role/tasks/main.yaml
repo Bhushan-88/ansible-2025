@@ -1,6 +1,5 @@
----
     - name: Install httpd
-      packege:
+      package:
         name: "{{PKG}}"
         state: present
 
