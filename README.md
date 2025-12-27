@@ -113,3 +113,6 @@ It is commonly used for:
 Configuration management
 Enabling/disabling settings
 Small file changes
+
+## blockinfile
+blockinfile is used to insert, update, or remove a block (multiple lines) of text in a file.

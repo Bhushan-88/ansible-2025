@@ -1,0 +1,12 @@
+- name: blockinfile example
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Add configuration block
+      blockinfile:
+        path: /tmp/app.conf
+        create: yes
+        block: |
+          app_name=myapp
+          app_env=dev
+          app_port=8080
