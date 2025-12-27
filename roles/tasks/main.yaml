@@ -1,0 +1,17 @@
+tasks:
+    - name: Install httpd
+      packege:
+        name: "{{PKG}}"
+        state: present
+
+    - name: Deploy index.html
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+
+    - name: Start and enable Apache service
+      systemd:
+        name: "{{PKG}}"
+        state: started
+        enabled: yes
+
