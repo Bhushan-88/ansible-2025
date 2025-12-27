@@ -116,3 +116,10 @@ Small file changes
 
 ## blockinfile
 blockinfile is used to insert, update, or remove a block (multiple lines) of text in a file.
+What is blockinfile used for?
+Answer:
+It manages multi-line configuration blocks inside files in an idempotent manner.
+
+A marker is the label Ansible uses to identify the beginning and end of a managed block inside a file.
+
+##

@@ -10,3 +10,11 @@
           app_name=myapp
           app_env=dev
           app_port=8080
+
+    - name: Add app config block # Custom Markers
+      blockinfile:
+        path: /tmp/app.conf
+        marker: "# {mark} APP CONFIG" 
+        block: |
+          app_port=8080
+          app_env=prod
