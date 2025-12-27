@@ -1,5 +1,5 @@
 - name: blockinfile example
-  hosts: localhost
+  hosts: all
   become: yes
   tasks:
     - name: Add configuration block
