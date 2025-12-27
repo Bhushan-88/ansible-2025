@@ -13,7 +13,7 @@
 
     - name: Add app config block # Custom Markers
       blockinfile:
-        path: /tmp/app.conf
+        path: /mnt/app2.conf
         marker: "# {mark} APP CONFIG" 
         block: |
           app_port=8080
