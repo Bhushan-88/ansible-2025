@@ -4,7 +4,7 @@
     state: present
   when: ansible_facts['os_family'] == "RedHat"
 
-- name: install openjdk-21-jdk
+- name: install openjdk-8-jdk
   package:
     name: openjdk-8-jdk
     state: present
