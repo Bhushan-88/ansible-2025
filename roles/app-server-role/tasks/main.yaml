@@ -17,16 +17,4 @@
     remote_src: yes
 
 - name: start tomcat server
-  command: "/opt/{{ TOMCAT_DIR }}/bin/catalina.sh run"
-  async: 600
-  poll: 0
-  nohup: yes
-  register: tomcat_start
-- name: wait for tomcat to start
-  async_status:
-    jid: "{{ tomcat_start.ansible_job_id }}"
-  register: job_result
-  until: job_result.finished
-  retries: 30
-  delay: 10
-  
+  shell: "/opt/{{ TOMCAT_DIR }}/bin/catalina.sh run"
