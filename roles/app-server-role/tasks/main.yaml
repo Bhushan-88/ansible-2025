@@ -31,3 +31,9 @@
         state: started
   when: ansible_os_family == "Debian"
   tags: start-tomcat
+
+- name: student app deployment
+  copy:
+    src: student.war
+    dest: /opt/apache-tomcat-9.0.113/webapps/
+  tags: deploy-app
