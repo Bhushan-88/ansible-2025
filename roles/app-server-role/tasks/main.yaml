@@ -18,3 +18,15 @@
 
 - name: start tomcat server
   shell: "/opt/{{ TOMCAT_DIR }}/bin/catalina.sh run"
+
+- name: upload application daemon file
+  copy:
+    src: tomcat-init
+    dest: /etc/init.d/tomcatd
+
+- name: reload daemon
+  systemd:
+    daemon_reload: yes
+    name: tomcatd
+    state: started
+    enabled: yes
