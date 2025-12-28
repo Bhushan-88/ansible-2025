@@ -20,6 +20,6 @@
     - name: Start and enable Apache service
       systemd:
         name: "{{PKG}}"
-        state: started
+        state: restarted
         enabled: yes
       when: ansible_os_family == "RedHat"
