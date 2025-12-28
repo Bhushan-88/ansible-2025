@@ -37,7 +37,7 @@
 # advance way to download from url to destination
 - name: student app deployment
   get_url:
-    url: https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war
+    url: "{{ APP_URL }}"
     dest: /opt/{{ TOMCAT_DIR }}/webapps/
   tags: deploy-app
   when: ansible_facts['os_family'] == "Debian"
