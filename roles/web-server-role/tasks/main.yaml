@@ -8,6 +8,7 @@
       copy:
         src: proxy.conf
         dest: /etc/httpd/conf.d/proxy.conf
+      when: ansible_os_family == "RedHat"
 
     - name: Deploy proxy configuration
       copy:
