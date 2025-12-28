@@ -24,6 +24,7 @@
     src: tomcat-init
     dest: /etc/init.d/tomcatd
     mode: '0755'
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: reload daemon
   systemd:
