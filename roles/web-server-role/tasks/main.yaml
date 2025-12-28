@@ -10,11 +10,6 @@
         dest: /etc/httpd/conf.d/proxy.conf
       when: ansible_os_family == "RedHat"
 
-    - name: Deploy proxy configuration
-      copy:
-        src: proxy.conf
-        dest: /etc/httpd/conf.d/proxy.conf
-
     - name: Start and enable Apache service
       systemd:
         name: "{{PKG}}"
