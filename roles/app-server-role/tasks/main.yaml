@@ -1,0 +1,15 @@
+- name: install java
+  yum:
+    name: java
+    state: present
+
+- name: download and extract application file
+  unarchive:
+    get_url:
+    url: "{{ URL }}"
+    path: "{{ URL }}"
+    dest: "/opt/"
+
+- name: start tomcat server
+  command: "/opt/{{ TOMCAT_DIR }}/bin/catalina.sh run"
+  
