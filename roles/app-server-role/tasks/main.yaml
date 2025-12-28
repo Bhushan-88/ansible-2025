@@ -1,5 +1,5 @@
 - name: install java
-  yum:
+  package:
     name: java
     state: present
 
@@ -8,7 +8,7 @@
     src: "{{ URL }}"
     dest: "/opt/"
     remote_src: yes
-    
+
 - name: start tomcat server
   command: "/opt/{{ TOMCAT_DIR }}/bin/catalina.sh run"
   
