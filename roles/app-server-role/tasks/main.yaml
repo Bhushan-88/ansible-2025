@@ -26,9 +26,8 @@
 
 - name: start tomcat service
   systemd:
-        daemon_reload: yes
+        daemon_reload: true
         name: tomcatd
         state: started
-        enabled: yes
   when: ansible_os_family == "Debian"
   tags: start-tomcat
