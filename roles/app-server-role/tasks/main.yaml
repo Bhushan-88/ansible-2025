@@ -9,6 +9,7 @@
     url: "{{ URL }}"
     path: "{{ URL }}"
     dest: "/opt/"
+    remote_src: yes
 
 - name: start tomcat server
   command: "/opt/{{ TOMCAT_DIR }}/bin/catalina.sh run"
