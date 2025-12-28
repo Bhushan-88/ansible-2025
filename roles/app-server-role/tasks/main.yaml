@@ -2,11 +2,13 @@
   package:
     name: java
     state: present
+  when: ansible_facts['os_family'] == "RedHat"
 
 - name: install openjdk-21-jdk
   package:
     name: openjdk-8-jdk
     state: present
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: download and extract application file
   unarchive:
