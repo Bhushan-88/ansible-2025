@@ -1,0 +1,6 @@
+- name: restart Apache service
+  systemd:
+    name: "{{PKG}}"
+    state: restarted
+    enabled: yes
+  when: ansible_os_family == "Debian"
