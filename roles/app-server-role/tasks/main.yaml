@@ -16,7 +16,6 @@
     src: tomcat-init
     dest: /etc/init.d/tomcatd
     mode: '0755'
-  notify: restart tomcatd
   when: ansible_facts['os_family'] == "Debian"
 
 - name: start tomcat service
