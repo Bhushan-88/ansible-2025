@@ -4,7 +4,7 @@
     state: present
   when: ansible_facts['os_family'] == "Debian"
 
-- name: download and extract application file
+- name: download and extract tomcat file
   unarchive:
     src: "{{ URL }}"
     dest: "/opt/"
@@ -39,5 +39,6 @@
   get_url:
     url: "{{ APP_URL }}"
     dest: /opt/{{ TOMCAT_DIR }}/webapps/
+    remote_src: yes
   tags: deploy-app
   when: ansible_facts['os_family'] == "Debian"
