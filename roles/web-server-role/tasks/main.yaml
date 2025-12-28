@@ -4,6 +4,12 @@
         state: present
       when: ansible_os_family == "RedHat"
 
+    - name: Selinux permissive mode
+      selinux:
+        policy: targeted
+        state: permissive
+     when: ansible_os_family == "RedHat"
+
     - name: proxy configuration
       copy:
         src: proxy.conf
