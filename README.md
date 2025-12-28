@@ -123,6 +123,7 @@ It manages multi-line configuration blocks inside files in an idempotent manner.
 A marker is the label Ansible uses to identify the beginning and end of a managed block inside a file.
 
 ## Roles
+A role is a structured way to organize Ansible automation into reusable components.
 
 ```bash
 root@ubuntu:~# ansible-galaxy init webserver

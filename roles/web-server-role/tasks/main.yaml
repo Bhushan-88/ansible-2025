@@ -2,11 +2,17 @@
       package:
         name: "{{PKG}}"
         state: present
+      when: ansible_os_family == "RedHat"
 
-    - name: Deploy index.html
+    - name: proxy configuration
       copy:
-        src: index.html
-        dest: /var/www/html/index.html
+        src: proxy.conf
+        dest: /etc/httpd/conf.d/proxy.conf
+
+    - name: Deploy proxy configuration
+      copy:
+        src: proxy.conf
+        dest: /etc/httpd/conf.d/proxy.conf
 
     - name: Start and enable Apache service
       systemd:
