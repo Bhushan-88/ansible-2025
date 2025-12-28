@@ -23,6 +23,7 @@
   copy:
     src: tomcat-init
     dest: /etc/init.d/tomcatd
+    mode: '0755'
 
 - name: reload daemon
   systemd:
