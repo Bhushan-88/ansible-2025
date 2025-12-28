@@ -30,4 +30,4 @@
         name: tomcatd
         state: started
         enabled: yes
-      when: ansible_os_family == "Debian"
+  when: ansible_os_family == "Debian"
