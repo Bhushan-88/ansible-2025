@@ -17,9 +17,9 @@
       notify: restart Apache service
       when: ansible_os_family == "RedHat"
 
-    - name: Start and enable Apache service
-      systemd:
-        name: "{{PKG}}"
-        state: started
-        enabled: yes
-      when: ansible_os_family == "RedHat"
+#    - name: Start and enable Apache service
+#      systemd:
+#        name: "{{PKG}}"
+#        state: started
+#        enabled: yes
+#      when: ansible_os_family == "RedHat"

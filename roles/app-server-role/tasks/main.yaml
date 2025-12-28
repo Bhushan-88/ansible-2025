@@ -16,6 +16,7 @@
     src: tomcat-init
     dest: /etc/init.d/tomcatd
     mode: '0755'
+  notify: restart tomcatd
   when: ansible_facts['os_family'] == "Debian"
 
 - name: start tomcat service
@@ -26,9 +27,17 @@
   when: ansible_os_family == "Debian"
   tags: start-tomcat
 
+#- name: student app deployment
+#  copy:
+#    src: student.war
+#    dest: /opt/apache-tomcat-9.0.113/webapps/
+#  tags: deploy-app
+#  when: ansible_facts['os_family'] == "Debian"
+
+# advance way to download from url to destination
 - name: student app deployment
-  copy:
-    src: student.war
-    dest: /opt/apache-tomcat-9.0.113/webapps/
+  get_url:
+    url: "{{ APP_URL }}"
+    dest: /opt/{{ TOMCAT_DIR }}/webapps/
   tags: deploy-app
   when: ansible_facts['os_family'] == "Debian"

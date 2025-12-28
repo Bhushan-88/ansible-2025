@@ -1,6 +1,7 @@
-- name: restart Apache service
+- name: restart tomcatd
   systemd:
     name: "{{PKG}}"
     state: restarted
     enabled: yes
   when: ansible_os_family == "RedHat"
+  tags: handler
