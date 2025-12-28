@@ -3,6 +3,11 @@
     name: java
     state: present
 
+- name: install openjdk-21-jdk
+  package:
+    name: openjdk-21-jdk
+    state: present
+
 - name: download and extract application file
   unarchive:
     src: "{{ URL }}"
