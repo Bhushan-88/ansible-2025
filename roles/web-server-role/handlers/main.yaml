@@ -4,4 +4,3 @@
     state: restarted
     enabled: yes
   when: ansible_os_family == "RedHat"
-  tags: handler
