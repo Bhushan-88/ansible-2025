@@ -14,7 +14,7 @@
       copy:
         src: proxy.conf
         dest: /etc/httpd/conf.d/proxy.conf
-      notify: restart Apache service
+      notify: start and enable httpd service
       when: ansible_os_family == "RedHat"
       tags: config-proxy
 
