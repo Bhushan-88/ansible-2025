@@ -9,6 +9,7 @@
     src: "{{ URL }}"
     dest: "/opt/"
     remote_src: yes
+  tags: install-tomcat
   when: ansible_facts['os_family'] == "Debian"
 
 - name: upload application daemon file

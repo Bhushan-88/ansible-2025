@@ -5,7 +5,7 @@
     enabled: yes
   when: ansible_os_family == "Debian"
 
-- name: start and enable httpd service
+- name: restart httpd service
   systemd:
         name: "{{PKG}}"
         state: restarted
