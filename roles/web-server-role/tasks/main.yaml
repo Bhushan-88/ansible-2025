@@ -14,13 +14,13 @@
       copy:
         src: proxy.conf
         dest: /etc/httpd/conf.d/proxy.conf
-      notify: restart httpd service
+      notify: httpd is started and enabled
       when: ansible_os_family == "RedHat"
       tags: config-proxy
 
-#    - name: Start and enable Apache service
-#      systemd:
-#        name: "{{PKG}}"
-#        state: started
-#        enabled: yes
-#      when: ansible_os_family == "RedHat"
+    - name: httpd is started and enabled
+      systemd:
+        name: "{{PKG}}"
+        state: started
+        enabled: yes
+      when: ansible_os_family == "RedHat"
