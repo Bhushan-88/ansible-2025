@@ -46,7 +46,6 @@
 - name: mysql connector deployment
   get_url:
     url: "{{ MYSQL_CONNECTOR_URL }}"
-    dest: "{{ WEB_APP_DIR }}/lib/mysql-connector.jar"
+    dest: "{{ TOMCAT_DIR }}/lib/mysql-connector.jar"
   tags: mysql-connector
   when: ansible_facts['os_family'] == "RedHat"
-  
