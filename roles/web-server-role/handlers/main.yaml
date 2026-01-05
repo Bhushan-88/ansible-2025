@@ -1,5 +1,5 @@
 - name: restart tomcatd
-  systemd:
+  service:
     name: tomcatd
     state: restarted
     enabled: yes
