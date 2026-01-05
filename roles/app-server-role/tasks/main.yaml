@@ -55,6 +55,5 @@
     src: context.xml.j2
     dest: "/opt/{{ TOMCAT_DIR }}/conf/context.xml"
   tags: deploy-context
-  when: ansible_facts['os_family'] == "Debian"
   notify: restart tomcatd
-
+  when: ansible_facts['os_family'] == "Debian"
