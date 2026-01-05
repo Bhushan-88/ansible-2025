@@ -1,8 +1,7 @@
 - name: restart tomcatd
-  service:
+  systemd:
     name: tomcatd
     state: restarted
-    enabled: yes
   when: ansible_os_family == "Debian"
 
 - name: httpd is started and enabled
