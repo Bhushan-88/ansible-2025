@@ -128,3 +128,15 @@ A role is a structured way to organize Ansible automation into reusable componen
 ```bash
 root@ubuntu:~# ansible-galaxy init webserver
 ```
+
+## Ansible Vault is used to encrypt sensitive data so it is not stored in plain text.
+
+What problem does Vault solve?
+
+Passwords
+API keys
+SSH credentials
+Database secrets
+
+Without Vault → secrets are visible in Git
+With Vault → secrets are encrypted and safe
