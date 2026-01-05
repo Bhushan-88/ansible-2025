@@ -24,6 +24,7 @@
         daemon_reload: true
         name: tomcatd
         state: started
+  notify: restart tomcatd
   when: ansible_os_family == "Debian"
   tags: start-tomcat
 
