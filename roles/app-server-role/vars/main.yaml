@@ -1,4 +1,5 @@
 URL: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.113/bin/apache-tomcat-9.0.113.tar.gz"
-TOMCAT_DIR: "apache-tomcat-9.0.113.tar.gz"
+TOMCAT_DIR: "apache-tomcat-9.0.113"
 APP_URL: "https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war"
 WEB_APP_DIR: "/opt/apache-tomcat-9.0.113/webapps/"
+MYSQL_CONNECTOR_URL: "http://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar"

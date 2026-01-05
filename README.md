@@ -127,3 +127,4 @@ A role is a structured way to organize Ansible automation into reusable componen
 
 ```bash
 root@ubuntu:~# ansible-galaxy init webserver
+```
