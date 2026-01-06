@@ -140,3 +140,44 @@ Database secrets
 
 Without Vault → secrets are visible in Git
 With Vault → secrets are encrypted and safe
+
+```bash
+ansible-vault encrypt_string "admin@123"
+ansible-vault encrypt file.txt # for file
+ansible-vault decript file.txt # for file
+ansible-playbook 9-tags.yaml --ask-vault-pass # if file is encripted
+```
+## Q: What is Ansible library?
+Answer:
+Ansible library is used to store custom modules written in Python when built-in modules are not sufficient.
+
+## What is defaults/main.yml?
+
+Stores default variables for a role
+Lowest priority
+Can be overridden easily
+
+Used for:
+Configurable parameters
+Safe default values
+
+## What is vars/main.yml?
+
+Stores role variables
+High priority
+Not easy to override
+
+Used for:
+Fixed values
+Internal role logic
+Environment-specific constants
+
+Q: Difference between defaults and vars in Ansible roles?
+Answer:
+Defaults have the lowest priority and can be overridden easily, while vars have higher priority and are harder to override.
+
+## meta - Ansible role dependencies are managed using meta/main.yml to ensure correct execution order.
+
+Role dependencies are defined in meta/main.yml. If role-A depends on role-B, Ansible ensures role-B runs first.
+
+## 
