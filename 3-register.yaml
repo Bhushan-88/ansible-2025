@@ -14,7 +14,7 @@
 
 # anather example
 - name: Register example
-  hosts: localhost
+  hosts: all
   tasks:
     - name: Check current user
       command: whoami

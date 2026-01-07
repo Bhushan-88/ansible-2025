@@ -21,9 +21,9 @@ Every server gets set up exactly the same way - no human mistakes or forgotten s
 You write "recipes" (called playbooks) that anyone can use, ensuring everyone follows the same process.
 4. Free & Popular
 Open-source with huge community support.
-## create own ansible configuration file 
+## ansible.cfg
 ```bash
-ansible-config init --disabled > ansible.cfg
+ansible-config init --disabled > ansible.cfg #create own ansible configuration file 
 ```
 Highest--> ANSIBLE_CONFIG=/path/to/custom.cfg-->Project-specific, CI/CD environments
 High-->	./ansible.cfg -->Most common - per-project configurations
@@ -161,6 +161,10 @@ Used for:
 Configurable parameters
 Safe default values
 
+Q: Why use defaults/main.yml?
+Answer:
+To define safe default values that users can easily override.
+
 ## What is vars/main.yml?
 
 Stores role variables
@@ -180,4 +184,19 @@ Defaults have the lowest priority and can be overridden easily, while vars have 
 
 Role dependencies are defined in meta/main.yml. If role-A depends on role-B, Ansible ensures role-B runs first.
 
-## 
+## What is Ansible Galaxy?
+
+Ansible Galaxy is a repository and command-line tool for:
+
+Finding
+Downloading
+Sharing
+Reusing Ansible roles and collections
+Think of Ansible Galaxy as GitHub for Ansible roles.
+
+Q1. What is Ansible Galaxy?
+Answer:
+Ansible Galaxy is a repository and CLI tool for sharing and reusing Ansible roles and collections.
+Q2. Why should we use Galaxy roles?
+Answer:
+To save time, reuse tested roles, and follow best practices.
