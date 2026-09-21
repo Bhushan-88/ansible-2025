@@ -3,22 +3,22 @@
   become: true
 
   tasks:
+     - name: Update Packages
+      apt: 
+        update_cache: true
     - name: Install unzip
       apt:
           name: unzip
           state: present
-    
     - name: Install docker compose
       apt:
           name: docker-compose-v2
           state: present
-
     - name: add user
       user:
           name: ubuntu
           groups: sudo,docker
           append: yes
-
     - name: add ubuntu grp docker
       command: usermod -aG docker ubuntu
 
