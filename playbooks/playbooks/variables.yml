@@ -1,0 +1,17 @@
+- name: Show varibales
+  hosts: workers
+  become: true 
+
+  vars: 
+    github_url: "https://github.com/LondheShubham153/devboard.git"
+
+  vars_files:
+      - ./vars/packages.yml
+  tasks: 
+    - name: Show the GitHub Repo URL
+      debug:
+        msg: "My DevBoard Github url is {{ github_url }}"
+
+    - name: Show the packages to installs
+      debug:
+        msg: "the base packages {{ base_packages }}"
