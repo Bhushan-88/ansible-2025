@@ -1,0 +1,7 @@
+base_packages:
+  - vim
+  - tree
+  - wget
+
+web_packages:
+  - nginx
