@@ -1,1 +1,26 @@
 
+# Task
+#git clone
+#install docker
+# give user the correct permission
+#run docker compose
+
+- name: Run devboard app
+  hosts: servers
+  become: true
+
+  tasks:
+    - name: Clone Devboard
+      git: 
+        repo: https://github.com/LondheShubham153/devboard.git
+        dest: /home/ubuntu/devboard-app
+        single_branch: yes
+        version: master
+
+    - name: copy .env file
+      shell: cp /home/ubuntu/devboard-app/.env.example /home/ubuntu/devboard-app/.env
+    
+    - name: Run the app via docker compose
+      shell: 
+          cmd: docker compose up -d
+          chdir: /home/ubuntu/devboard-app/
