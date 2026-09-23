@@ -1,24 +1,58 @@
-- name: Instal common packages
-  hosts: servers
+- name: Install packages
+  hosts: workers
   become: true
 
-  tasks:
-     - name: Update Packages
-      apt: 
-        update_cache: true
-    - name: Install unzip
-      apt:
-          name: unzip
-          state: present
-    - name: Install docker compose
-      apt:
-          name: docker-compose-v2
-          state: present
-    - name: add user
-      user:
-          name: ubuntu
-          groups: sudo,docker
-          append: yes
-    - name: add ubuntu grp docker
-      command: usermod -aG docker ubuntu
+  vars_files: 
+    - ./vars/packages.yml
+
+  tasks: 
+    - name: ubuntu specific task
+      block: 
+        - name: update cache
+          apt: 
+            update_cache: true
+        - name: Install docker
+          package: 
+            name: docker.io
+            state: present 
+      when: ansible_facts['distribution'] == "Ubuntu"
+
+    - name: Amazon Specific task
+      block:
+        - name: Update cache
+          dnf: 
+            update_cache: true
+        - name: Install docker
+          dnf: 
+            name: docker
+            state: present 
+      when: ansible_facts['distribution'] == "Amazon"
+
+    - name: Redhat Specific task
+      block:
+        - name: Update cache
+          dnf: 
+            update_cache: true
+        - name: Install dnf plugin
+          dnf:  
+            name: dnf-plugins-core
+            state: present
+        - name: Add docker repo 
+          shell: 
+            cmd: dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
+        - name: Install docker 
+          dnf: 
+            name: docker-ce
+            state: present
+      when: ansible_facts['distribution'] == "RedHat"
+      
+              
+    - name: Install Packages
+      package: 
+        name: "{{ item }}" 
+        state: present 
+      loop: "{{ base_packages }}"
+
+
+
 
